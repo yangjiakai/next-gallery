@@ -1,7 +1,7 @@
 import BaiDuAnalytics from "@/app/BaiDuAnalytics";
 import GoogleAnalytics from "@/app/GoogleAnalytics";
+import AppHeader from "@/components/layouts/app-header";
 import Footer from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
 import { TailwindIndicator } from "@/components/TailwindIndicator";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { siteConfig } from "@/config/site";
@@ -28,6 +28,7 @@ export const metadata = {
   openGraph: siteConfig.openGraph,
   twitter: siteConfig.twitter,
 };
+
 export const viewport: Viewport = {
   themeColor: siteConfig.themeColors,
 };
@@ -51,9 +52,11 @@ export default async function RootLayout({
           defaultTheme={siteConfig.defaultNextTheme}
           enableSystem
         >
-          <Header />
-          <main className="flex flex-col items-center py-6">{children}</main>
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <AppHeader />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
           <Analytics />
           <TailwindIndicator />
         </ThemeProvider>
