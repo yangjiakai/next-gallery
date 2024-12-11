@@ -15,7 +15,7 @@ const components = [
 
 export default function UIPage() {
   return (
-    <div className="space-y-6">
+    <div className="w-full h-full p-6 space-y-6">
       <div>
         <h1 className="text-3xl font-bold">UI Components</h1>
         <p className="text-muted-foreground mt-2">

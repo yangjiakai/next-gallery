@@ -1,7 +1,5 @@
 import BaiDuAnalytics from "@/app/BaiDuAnalytics";
 import GoogleAnalytics from "@/app/GoogleAnalytics";
-import AppHeader from "@/components/layouts/app-header";
-import Footer from "@/components/footer/Footer";
 import { TailwindIndicator } from "@/components/TailwindIndicator";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { siteConfig } from "@/config/site";
@@ -52,11 +50,8 @@ export default async function RootLayout({
           defaultTheme={siteConfig.defaultNextTheme}
           enableSystem
         >
-          <div className="flex flex-col min-h-screen">
-            <AppHeader />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
+        {children}
+          
           <Analytics />
           <TailwindIndicator />
         </ThemeProvider>
